@@ -19,6 +19,8 @@
 go mod init githubPath/name
 ```
 
+
+
 #### constants variables and basic data types
 
 ##### integer
@@ -42,3 +44,10 @@ go mod init githubPath/name
 - should be assigned the value during variable initializing
 
 ##### runes
+- go uses utf-8 for stirng encoding, any non-ascii character will require an extra byte to encode to binary
+- for single character non-ascii, we can use runes - which is `int` under the hood but can handle unicode characters
+
+
+#### control structures
+- `error` is a datatype in go with default value befing `nil`
+- `elseif` and `else` should be in the same line as the previous closing `}` bracker

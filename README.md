@@ -52,3 +52,37 @@ go mod init githubPath/name
 - `error` is a datatype in go with default value being `nil`
 - `elseif` and `else` should be in the same line as the previous closing `}` bracker
 - for `switch` unlike other languages, we don't want to explicitly break a `case` as if one case is executed it control will break out of switch block
+- we have two types of switch statements,
+  - one without input variable for `switch`
+  - other with a input variable/condition for `switch`
+
+
+
+
+#### Arrays
+- fixed length - size of the array cannot change once it is initialized
+- same type 
+- indexable
+- contiguous memory location
+- in go we cannot have a composite literal without type (go is very strict - `intArr := [3]int32{1,2,3}`)
+
+#### Slices
+- "slices wrap arrays to give a more general, powerful and convenient interface to sequence of data"
+- the syntax of slice is similar to arrays, but we will not mention size (only `[]`)
+- we can add more elements to slice using the in build `append` function - appending returns the new slice therefore its better to save it to the initial variable
+
+**`cap` vs `len`**
+- "capacity" is the total size of the underlying array slice uses
+- "length" is the currently occupied elements
+- if we try to access an element e, `e > len` and `e < cap` we will get an index out of range error
+
+`make` 
+- given a type like slice/map as argument,it allocate that type returns the that type for explicitly memory management
+- for slices the second numeric argument corresponds to length of underlying array 
+- and optional third argument specifies the capacity of the array - default value being length of the array
+
+
+#### map
+- map is a set of key value pairs
+- if we try to access a key that does not exist, go will return the default value of for that `value` type
+- this can be cause may logical errors.To handle this, when we access a key go returns a second value indicating weather the key exists or not

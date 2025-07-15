@@ -49,5 +49,6 @@ go mod init githubPath/name
 
 
 #### control structures
-- `error` is a datatype in go with default value befing `nil`
+- `error` is a datatype in go with default value being `nil`
 - `elseif` and `else` should be in the same line as the previous closing `}` bracker
+- for `switch` unlike other languages, we don't want to explicitly break a `case` as if one case is executed it control will break out of switch block

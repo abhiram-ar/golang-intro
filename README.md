@@ -91,3 +91,22 @@ go mod init githubPath/name
 - for loops - with `range` and without `range`
 - no while loop in go, but can be archived with for loop
 - we can also have normal 3 part loops in go
+
+
+#### more on string
+- go uses utf-8 encoding for string
+- utf-8 uses 7-bits (`uint8`) to represent  a character  - (128 characters)
+- to handle extended character we could have used utf-32, but this will have a lot of memory wasted 
+- go handle this using unicode code points - which has varialbe bytes sizing depending on the character
+- when we are indexing a string in go, we are indexing the underlying byte array
+- however, if we are using `range` to iterate over the string, the `range` does some heavy lifting under the hood to encoding the variable length byte array to its appropritate character
+- key takeaway: when dealing with string in go under the hood we have an array of bytes
+- when taking the `len` of the string, we are taking the length of bytes not the number of character in the string
+
+an easier way of iterating string:   
+  - cast the string to array of runes (`[]rune`)
+  - runes are unicode point numbers which represent the character
+  - runes are alias for `int32`
+  - we can easier represent `rune` using single quote `''`
+   
+- strings are immutable in go - we cannot modify them once created 

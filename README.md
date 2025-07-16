@@ -86,3 +86,8 @@ go mod init githubPath/name
 - map is a set of key value pairs
 - if we try to access a key that does not exist, go will return the default value of for that `value` type
 - this can be cause may logical errors.To handle this, when we access a key go returns a second value indicating weather the key exists or not
+
+#### loops
+- for loops - with `range` and without `range`
+- no while loop in go, but can be archived with for loop
+- we can also have normal 3 part loops in go

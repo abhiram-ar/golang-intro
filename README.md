@@ -110,3 +110,29 @@ an easier way of iterating string:
   - we can easier represent `rune` using single quote `''`
    
 - strings are immutable in go - we cannot modify them once created 
+
+
+#### structs 
+- structs allows to define our own typed
+- structs allows us to define combine/mixed types
+- default value of a field is the  default value if its type
+- while setting the value of a struct,
+  - we can mention  the field and initialize the value
+  - or, use short hand and declare the values in order (in this case all fields values should to be initialized)
+  - or, directly assign the value using the `.` operator
+
+- when composing another struct we can exclude the name of the field, and only mention its struct type. This causes the fields in the nested struct to be same level as the nested struct
+
+
+**anoymous struct** 
+- struct without a name
+- but we have to define and initialize the fields in  the same location
+- note: this type of struct is not reusable
+
+- struct also have the concept of methods
+- these are functions that are directly tied to the struct, and have access to struct itself
+
+#### interface
+- allows us to be more general about structs,
+- interface allows processing of multiple struct which has the same signature (common fields) as defined interface
+- this make our code more reusable

@@ -161,3 +161,25 @@ var *p = &i
 **pointers and functions**
 - when we pass an array to a functions, we are passing the arguments as values (deep copy of array is created)
 - to pass my reference, make the function arguments as pointers and send the address of the array
+
+#### go routines
+- go routines are a way to launch multiple function and run them currently
+- concurrency != parallel execution (for single core case, for multi core concurrency can be archived via parellel execution )
+
+- to run a functions as go routine, we simple put `go` just before the function call which allows the function to run in the background
+
+**wait groups**
+- imported from `sync`
+- when we span go routines, it runs in the background and sometime we need to do other operations if based on the result or after the go-routines have completed
+- this is where wait groups comes in - basically its a counter. 
+- we `Add` (increment) delta(counter) of wait groups when we spawn a  go routine and when a go routine completes we mark it as `Done` which decrements the counter
+- to wait for all the go routines to complete just invoke `wait()` on wait group
+- wait group release the lock when the counter of wait group reaches 0
+
+**race conditions**
+- when we have multiple go routines writing to a common destination, we can have unexpected bugs/race-conditions
+- to handle these go provide `Mutex` to control resource locking
+- one drawback of `Mutex` is that it completely locks out other go routine that want to access(read) the resource
+- to address this issue go provides `RWMutex` - which provide full locking and selective R/W locking
+
+

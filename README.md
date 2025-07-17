@@ -182,4 +182,19 @@ var *p = &i
 - one drawback of `Mutex` is that it completely locks out other go routine that want to access(read) the resource
 - to address this issue go provides `RWMutex` - which provide full locking and selective R/W locking
 
+### Channels
+channels are means of go routine to pass around information
 
+features
+- they hold data
+- they are thread safe - no race conditions while reading and writing
+- listen for data - when data is added or removed from channel - and block code execution  untill these events happen
+
+- when we write to an unbuffered channel, execution will be blocked untill something else read from it (warn: common type of error leading to deadlock)
+- we can use the `close(chan)` to close the channel and notify any consumers/readers of this  channel that it has been closed and stop listening for events
+
+- buffered channel, allows the producer to producer as much message as they want and move on without waiting for consumer to consume the message
+
+**switch statements and channels**
+- we can have each `case` of a `switch` statement listen on a channel,
+- and that `case` will be executed which first recives a msg from the channel

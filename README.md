@@ -197,4 +197,14 @@ features
 
 **switch statements and channels**
 - we can have each `case` of a `switch` statement listen on a channel,
-- and that `case` will be executed which first recives a msg from the channel
+- and that `case` will be executed which first recievs a msg from the change
+
+
+
+### Generics
+- used  for function reuseability
+- function  takes additional arguments to process different types of arguments
+- we also have `any` type in go - but use this sparangly
+- we dont want to always mention the generic type during function call, as go compiler is smart enough to inter these types
+
+- generic can also be used with struct types

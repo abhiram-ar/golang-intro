@@ -136,3 +136,29 @@ an easier way of iterating string:
 - allows us to be more general about structs,
 - interface allows processing of multiple struct which has the same signature (common fields) as defined interface
 - this make our code more reusable
+
+#### pointers 
+- pointers are special data type in go
+- we use * just before the data type to indicate that the variable is a pointer to that specific data type in memory eg:`var a *int32` 
+- the default value of a pointer is `nil`
+- we can allocate memory for a type using `new(type)` which returns the allocated memory address 
+- note: `make()` returns the new type after allocating the type in memory
+
+- to dereference a pointer(getting/setting the value at that memory location) we can use the `*` operator
+- if we try to set a value to a pointer which does not points to any memory location we will get a *nill pointers dereference error*
+
+- to assign the memory location of another variable to a pointer we can use the `&` operator
+```go
+var i 10
+var *p = &i
+```
+```
+
+
+**slices and pointers**
+- when we assing a alice it a variable, we are assinging the pointer to the slice to the variable
+- if we duplicate this slice variable and modify the slice of duplicate variable, we will mutate the original slice
+
+**pointers and functions**
+- when we pass an array to a functions, we are passing the arguments as values (deep copy of array is created)
+- to pass my reference, make the function arguments as pointers and send the address of the array

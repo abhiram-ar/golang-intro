@@ -152,7 +152,6 @@ an easier way of iterating string:
 var i 10
 var *p = &i
 ```
-```
 
 
 **slices and pointers**
